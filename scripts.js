@@ -1,13 +1,12 @@
-const promptsFetch = fetch("prompts.json").then((content) => {
-  return content.json();
+const activitiesFetch = fetch ('activities.json').then (content => {
+  return content.json ();
 });
 
-promptsFetch.then((content) => {
-  let keyArray = Object.keys(content);
-  let promptKey = keyArray[~~(Math.random() * keyArray.length)];
-  let prompt = content[promptKey];
-  let promptDiv = document.createElement("div");
-  promptDiv.id = "activity";
-  promptDiv.innerHTML = prompt;
-  document.querySelector("body").appendChild(promptDiv);
+activitiesFetch.then (content => {
+  let keyArray = Object.keys (content);
+  let activity = keyArray[~~(Math.random () * keyArray.length)];
+  let activityDiv = document.createElement ('div');
+  activityDiv.id = 'activity';
+  activityDiv.innerHTML = activity;
+  document.querySelector ('body').appendChild (activityDiv);
 });
